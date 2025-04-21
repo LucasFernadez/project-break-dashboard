@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Break Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="index.html" class="home-button">
+        <img src="assets/img/home.png" alt="Inicio">
+      </a>
+    <div class="overlay"></div>
+    <div class="dashboard">
+      <h1>PROJECT BREAK - DASHBOARD</h1>
+      <div class="iconos">
+        <a href="reloj/reloj.html" title="Reloj">
+          <img src="assets/img/reloj.png" alt="Reloj">
+        </a>
+        <a href="clima/clima.html" title="Clima">
+          <img src="assets/img/clima.png" alt="Clima">
+        </a>
+        <a href="generador/generador.html" title="Generador">
+          <img src="assets/img/candado.png" alt="Generador">
+        </a>
+        <a href="links/links.html" title="Links">
+          <img src="assets/img/enlace.png" alt="Links">
+        </a>
+      </div>
+      <div class="grid">
+    
+        <div class="card reloj">
+          <h2>🕒 Reloj</h2>
+          <p id="hora"></p>
+          <p id="fecha"></p>
+          <p id="mensaje"></p>
+        </div>
+  
+        <div class="card clima">
+          <h2>🌤 Clima</h2>
+          <p><span id="ciudad"></span>, <span id="pais"></span></p>
+          <img id="icono" alt="">
+          <p><span id="estado"></span></p>
+          <p>Temp: <span id="temp"></span>°C</p>
+          <p>Humedad: <span id="humedad"></span>%</p>
+        </div>
+  
+        <div class="card generador">
+          <h2>🔐 Contraseña</h2>
+          <input type="number" id="longitud" min="12" max="50" value="16">
+          <button id="generar">Generar</button>
+          <p id="resultado"></p>
+        </div>
+  
+        <div class="card links">
+          <h2>🔗 Links</h2>
+          <input type="text" id="titulo" placeholder="Nombre">
+          <input type="url" id="url" placeholder="https://">
+          <button id="añadir">Añadir</button>
+        </div>
+        <div class="card links-list">
+            <h2>📂 Mis Enlaces</h2>
+            <ul id="lista-links-main"></ul>
+          </div>
+      </div>
+    </div>
+  
+    <script src="reloj/reloj.js"></script>
+    <script src="clima/clima.js"></script>
+    <script src="generador/generador.js"></script>
+    <script src="links/links.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const listaMain = document.getElementById('lista-links-main');
+          if (!listaMain) return;
+          const enlaces = JSON.parse(localStorage.getItem('links')) || [];
+          enlaces.forEach(({ titulo, url }) => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="${url}" target="_blank">${titulo}</a>`;
+            listaMain.appendChild(li);
+          });
+        });
+      </script>
+      
+    <script>
+      const fondos = [
+        "assets/img/fondo1.jpg",
+        "assets/img/fondo2.jpg",
+        "assets/img/fondo3.jpg",
+        "assets/img/fondo4.jpg",
+        "assets/img/fondo5.jpg",
+        "assets/img/fondo6.jpg",
+        "assets/img/fondo7.jpg",
+        "assets/img/fondo8.jpg",
+        "assets/img/fondo9.jpg",
+        "assets/img/fondo10.jpg",
+      ];
+  
+      function cambiarFondo() {
+        const fondo = fondos[Math.floor(Math.random() * fondos.length)];
+        document.body.style.backgroundImage = `url(${fondo})`;
+      }
+  
+      cambiarFondo();
+      setInterval(cambiarFondo, 15000);
+    </script>
+  </body>
+  
+</html>

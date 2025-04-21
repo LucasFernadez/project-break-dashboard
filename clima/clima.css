@@ -1,0 +1,61 @@
+body {
+    background-color: #0f172a;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  img {
+    width: 64px;
+    height: 64px;
+  }
+  
+  #horas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .hora-item {
+    background-color: #1e293b;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100px;
+  }
+  
+  .home-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    z-index: 2;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  .home-button:hover {
+    transform: scale(1.1);
+    background-color: rgba(255,255,255,0.3);
+  }
+  .home-button img {
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+  

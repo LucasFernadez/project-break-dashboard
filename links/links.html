@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mis Links</title>
+  <link rel="stylesheet" href="links.css">
+</head>
+<body>
+  <a href="../index.html" class="home-button">
+    <img src="../assets/img/home.png" alt="Volver al inicio">
+  </a>
+  <div class="overlay"></div>
+  
+  <div class="container">
+    <h1>Listado de Links</h1>
+    
+    <input type="text" id="titulo" placeholder="Nombre del enlace">
+    <input type="url" id="url" placeholder="https://ejemplo.com">
+    <button id="añadir">Añadir enlace</button>
+    
+    <ul id="lista-links"></ul>
+  </div>
+
+  <script src="links.js"></script>
+  <script>
+    const fondos = [
+      "../assets/img/fondo1.jpg",
+      "../assets/img/fondo2.jpg",
+      "../assets/img/fondo3.jpg",
+      "../assets/img/fondo4.jpg",
+      "../assets/img/fondo5.jpg",
+      "../assets/img/fondo6.jpg",
+      "../assets/img/fondo7.jpg",
+      "../assets/img/fondo8.jpg",
+      "../assets/img/fondo9.jpg",
+      "../assets/img/fondo10.jpg",
+    ];
+
+    function cambiarFondo() {
+      const fondo = fondos[Math.floor(Math.random() * fondos.length)];
+      document.body.style.backgroundImage = `url(${fondo})`;
+    }
+
+    cambiarFondo();
+    setInterval(cambiarFondo, 15000);
+  </script>
+</body>
+</html>

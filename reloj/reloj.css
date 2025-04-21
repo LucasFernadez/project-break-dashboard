@@ -1,0 +1,78 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0d0d0d;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  #hora {
+    font-size: 5rem;
+    margin: 0;
+  }
+  
+  #fecha {
+    font-size: 2rem;
+    margin: 10px 0;
+  }
+  
+  #mensaje {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  .contenido {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .reloj-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.8); 
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+  
+  .home-button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255,255,255,0.2);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 6px rgba(0,0,0,0.4);
+    z-index: 2;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  .home-button:hover {
+    transform: scale(1.1);
+    background-color: rgba(255,255,255,0.3);
+  }
+  .home-button img {
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+  
